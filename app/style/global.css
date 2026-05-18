@@ -1,0 +1,12 @@
+
+.input_wrapper {
+    flex-direction: column;
+    align-items: left;
+    display: flex;
+}
+.input {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0.6rem;
+}

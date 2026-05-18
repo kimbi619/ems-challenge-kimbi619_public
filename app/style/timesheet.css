@@ -1,0 +1,244 @@
+.timesheet_wrap { 
+  padding: 1rem 0; 
+  font-size: 14px; 
+}
+
+.timesheet_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  gap: 12px;
+}
+
+.timesheet_employee_select {
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 0.5px solid #ccc;
+  background: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.timesheet_view_btn {
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 0.5px solid #ccc;
+  cursor: pointer;
+  background: none;
+  color: #ddd;
+  font-size: 13px;
+}
+.timesheet_view_btn.active { 
+  background: #afceff; 
+  color: #000;
+  border: none; 
+}
+
+.timesheet_week_nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.timesheet_nav_btn {
+  background: none;
+  border: 0.5px solid #ccc;
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: #000;
+  font-size: 14px;
+}
+
+.timesheet_week_label { 
+  font-size: 13px; 
+  color: #ddd; 
+  min-width: 160px; 
+  text-align: center; 
+}
+
+.timesheet_table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+.timesheet_th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 0.5px solid #ddd;
+}
+
+
+.timesheet_td {
+  padding: 10px 8px;
+  border-bottom: 0.5px solid #ddd;
+  vertical-align: middle;
+  color: var(--color-text-primary);
+  font-size: 13px;
+}
+.timesheet_td--right { text-align: right; }
+
+.timesheet_badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+.timesheet_badge--late        { background: #FAECE7; color: #993C1D; }
+.timesheet_badge--early       { background: #FAEEDA; color: #854F0B; }
+.timesheet_badge--ontime      { background: #E6F1FB; color: #185FA5; }
+.timesheet_badge--absent      { background: #F1EFE8; color: #5F5E5A; }
+.timesheet_badge--remote      { background: #EAF3DE; color: #3B6D11; }
+.timesheet_badge--regularized { background: #FBEAF0; color: #993556; }
+
+.timesheet_timeline_wrap {
+  position: relative;
+  height: 28px;
+  background: #ddd;
+  border-radius: 4px;
+  min-width: 200px;
+  overflow: hidden;
+}
+
+.timesheet_tl_bar { 
+  position: absolute; 
+  height: 100%; 
+  border-radius: 4px; 
+}
+
+.timesheet_tl_bar--work  { background: #B5D4F4; }
+.timesheet_tl_bar--break { background: #FAC775; }
+
+.timesheet_tl_label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: 500;
+  color: #185FA5;
+  white-space: nowrap;
+}
+
+.timesheet_tl_label--start { 
+  padding-left: 3px; 
+}
+
+.timesheet_tl_label--end   { 
+  transform: translateY(-50%) 
+  translateX(-100%); padding-right: 3px; 
+}
+
+.timesheet_tl_absent {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  color: #ddd;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.timesheet_hours_main { 
+  font-size: 13px; 
+}
+
+.timesheet_legend { 
+  display: flex; 
+  gap: 16px; 
+  margin-block: 2rem; 
+  font-size: 12px; 
+}
+
+.timesheet_legend_item { 
+  display: flex; 
+  align-items: center; 
+  gap: 5px; 
+  margin-left: 1rem;
+}
+
+.timesheet_legend_dot  { 
+  width: 10px; 
+  height: 10px;
+  border-radius: 2px;
+}
+.timesheet_hours_sub {
+  white-space: nowrap;
+}
+
+.timesheet_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.timesheet_modal {
+  background: #fff;
+  padding: 1.25rem;
+  width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.timesheet_modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.timesheet_modal_title { 
+  font-size: 15px; 
+  font-weight: 500; 
+}
+
+.timesheet_modal_close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  padding: 0 4px;
+}
+.timesheet_modal_close:hover { 
+  color: tomato; 
+}
+
+.timesheet_modal_section { 
+  margin-bottom: 1rem; 
+}
+
+.timesheet_modal_section_title {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ddd;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 0.5px solid #ddd;
+}
+
+.timesheet_modal_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+.timesheet_modal_label { 
+  color: #ddd; 
+}
+
+.timesheet_modal_value { 
+  color: #000; 
+  text-align: right; 
+  max-width: 60%; 
+}
