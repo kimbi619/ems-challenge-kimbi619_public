@@ -1,5 +1,5 @@
 .timesheet_wrap { 
-  padding: 1rem 0; 
+  padding: 1rem; 
   font-size: 14px; 
 }
 
@@ -14,8 +14,8 @@
 .timesheet_employee_select {
   font-size: 14px;
   padding: 4px 10px;
-  border-radius: 8px;
-  border: 0.5px solid #ccc;
+  border-radius: 4px;
+  border: 1px solid #ccc;
   background: none;
   color: #000;
   cursor: pointer;
@@ -23,8 +23,8 @@
 
 .timesheet_view_btn {
   padding: 4px 12px;
-  border-radius: 8px;
-  border: 0.5px solid #ccc;
+  border-radius: 4px;
+  border: 1px solid #ccc;
   cursor: pointer;
   background: none;
   color: #ddd;
@@ -44,8 +44,8 @@
 }
 .timesheet_nav_btn {
   background: none;
-  border: 0.5px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   padding: 4px 10px;
   cursor: pointer;
   color: #000;
@@ -70,13 +70,13 @@
   color: #000;
   text-align: left;
   padding: 6px 8px;
-  border-bottom: 0.5px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 
 .timesheet_td {
   padding: 10px 8px;
-  border-bottom: 0.5px solid #ddd;
+  border-bottom: 1px solid #ddd;
   vertical-align: middle;
   color: var(--color-text-primary);
   font-size: 13px;
@@ -223,7 +223,7 @@
   color: #ddd;
   margin-bottom: 6px;
   padding-bottom: 4px;
-  border-bottom: 0.5px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .timesheet_modal_row {

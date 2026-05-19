@@ -45,8 +45,15 @@ export default function NewEmployeePage() {
   return (
     <div>
       <Navbar />
-      <h1>Create New Employee</h1>
+      <div className="employee_table_header">
+        <div>
+          <h1>New Employee</h1>
+          <p>Fill in the details to create a new employee record</p>
+        </div>
+      </div>
+      <div className="employee_form">
       <form onSubmit={handleSubmit}>
+        <div className="row_wrap">
         <div>
           <label htmlFor="first_name">First Name</label>
           <input type="text" name="first_name" id="first_name" required />
@@ -54,6 +61,7 @@ export default function NewEmployeePage() {
         <div>
           <label htmlFor="last_name">Last Name</label>
           <input type="text" name="last_name" id="last_name" required />
+        </div>
         </div>
         <div>
           <label htmlFor="email">Email</label>
@@ -71,10 +79,7 @@ export default function NewEmployeePage() {
           <label htmlFor="hire_date">Hire Date</label>
           <input type="date" name="hire_date" id="hire_date" required />
         </div>
-        <div>
-          <label htmlFor="salary">Salary</label>
-          <input type="number" name="salary" id="salary" required min={200000}/>
-        </div>
+        <div className="row_wrap">
         <div>
           <label htmlFor="department">Department</label>
           <input type="text" name="department" id="department" required />
@@ -83,13 +88,22 @@ export default function NewEmployeePage() {
           <label htmlFor="job_title">Job Position</label>
           <input type="text" name="job_title" id="job_title" required />
         </div>
+        </div>
+        
         <div>
           <label htmlFor="manager_id">Manager ID</label>
           <input type="number" name="manager_id" id="manager_id" />
         </div>
-        <div>
-          <label htmlFor="initial_salary">Initial Salary</label>
-          <input type="number" name="initial_salary" id="initial_salary" required min={200000} />
+
+        <div className="row_wrap">
+          <div>
+            <label htmlFor="initial_salary">Initial Salary</label>
+            <input type="number" name="initial_salary" id="initial_salary" required min={200000} />
+          </div>
+          <div>
+            <label htmlFor="salary">Salary</label>
+            <input type="number" name="salary" id="salary" required min={200000}/>
+          </div>
         </div>
         <div>
           <label htmlFor="role">Role</label>
@@ -127,10 +141,7 @@ export default function NewEmployeePage() {
           {loading ? "Creating..." : "Create Employee"}
         </button>
       </form>
-      <hr />
-      <ul>
-        <li><a href="/employees">Employees</a></li>
-      </ul>
+      </div>
     </div>
   );
 }

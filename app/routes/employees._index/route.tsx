@@ -5,6 +5,11 @@ import { requireAuth } from "~/lib/auth"
 
 export async function loader({ request }: LoaderFunctionArgs) {
   requireAuth(request)
+  const url = new URL(request.url)
+  const search = url.searchParams.get("search")?.trim() ?? ""
+  const department = url.searchParams.get("department")?.trim() ?? ""
+
+
   const db = await getDB()
   const employees = await db.all(`
     SELECT 
@@ -14,13 +19,26 @@ export async function loader({ request }: LoaderFunctionArgs) {
       m.email AS manager_email
     FROM employees e
     LEFT JOIN employees m ON e.manager_id = m.id
-  `)
+    WHERE
+      (
+        e.first_name  LIKE $search OR
+        e.last_name   LIKE $search OR
+        e.email       LIKE $search
+      )
+      AND ($department = '' OR e.department = $department)
+  `, { $search: `%${search}%`, $department: department })
 
-  return { employees }
+  return { employees, search, department }
 }
 
 export default function EmployeesPage() {
-  const { employees } = useLoaderData()
+  const { employees, search, department } = useLoaderData() as Awaited<ReturnType<typeof loader>>
+
+  function update(patch: Record<string, string>) {
+    const params = new URLSearchParams({ search, department, ...patch })
+    for (const [k, v] of [...params]) if (!v) params.delete(k)
+    navigate(`?${params}`, { replace: true })
+  }
   const navigate = useNavigate()
 
   const gotoEmployee =(em_id: number) => {
@@ -36,6 +54,16 @@ export default function EmployeesPage() {
           <p>Manage your employees efficiently</p>
         </div>
           <Link to="/employees/new" className="btn">New Employee</Link>
+      </div>
+      <div className="employee_toolbar">
+        <input type="text" placeholder="Search employees..." className="employee_search" onChange={e => update({ search: e.currentTarget.value })} defaultValue={search} />
+        <select className="employee_filter" title="Filter by department" onChange={e => update({ department: e.currentTarget.value })} value={department}>
+          <option value="">All Departments</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Finance">Finance</option>
+          <option value="Human Resources">Human Resources</option>
+        </select>
       </div>
       <table>
         <thead>
