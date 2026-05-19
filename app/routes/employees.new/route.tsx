@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import Navbar from "~/components/Navbar";
 
 
 export default function NewEmployeePage() {
@@ -43,6 +44,7 @@ export default function NewEmployeePage() {
 
   return (
     <div>
+      <Navbar />
       <h1>Create New Employee</h1>
       <form onSubmit={handleSubmit}>
         <div>

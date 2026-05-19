@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import Navbar from "~/components/Navbar";
 
 type User = {
   id: number;
@@ -164,6 +165,8 @@ export default function HomePage() {
   }
 
   return (
+    <>
+      <Navbar />
     <div className="home_wrap">
       <div className="home_greeting">
         <p className="home_name">Welcome back, {user?.first_name}</p>
@@ -252,5 +255,6 @@ export default function HomePage() {
         Logout
       </button>
     </div>
+    </>
   );
 }

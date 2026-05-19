@@ -1,4 +1,5 @@
 import { Link, useLoaderData, useNavigate, type LoaderFunctionArgs } from "react-router"
+import Navbar from "~/components/Navbar"
 import { getDB } from "~/db/getDB"
 import { requireAuth } from "~/lib/auth"
 
@@ -26,6 +27,8 @@ export default function EmployeesPage() {
     navigate(`/employees/${em_id}`)
   }
   return (
+    <>
+      <Navbar />
     <div className="employee_table">
       <table>
         <thead>
@@ -63,5 +66,6 @@ export default function EmployeesPage() {
         <li><a href="/timesheets/">Timesheets</a></li>
       </ul>
     </div>
+    </>
   )
 }

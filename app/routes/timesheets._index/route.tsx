@@ -5,6 +5,7 @@ import { getWeekDays, isSameDay } from "~/lib/timesheet";
 import { TimesheetRow } from "~/ui/TimesheetTimeline";
 import "../../style/timesheet.css";
 import CalendarView from "~/ui/CalendarView";
+import Navbar from "~/components/Navbar";
 
 export async function loader() {
   const db = await getDB();
@@ -26,6 +27,8 @@ export default function TimesheetsPage() {
   const employeeTimesheets = timesheets.filter((t: any) => t.employee_id === selectedId);
 
   return (
+    <>
+      <Navbar />
     <div className="timesheet_wrap">
       <div className="timesheet_header">
         <select
@@ -91,5 +94,6 @@ export default function TimesheetsPage() {
         <li><a href="/employees">Employees</a></li>
       </ul>
     </div>
+    </>
   );
 }

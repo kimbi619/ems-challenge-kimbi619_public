@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router"
 import type { LoaderFunctionArgs } from "react-router"
+import Navbar from "~/components/Navbar"
 import { getDB } from "~/db/getDB"
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -28,6 +29,7 @@ export default function EmployeePage() {
 
   return (
     <div>
+      <Navbar />
       <div className="employee_details">
         <div className="user_profile">
           <div className="user_pp">

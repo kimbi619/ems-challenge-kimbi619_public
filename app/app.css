@@ -71,6 +71,22 @@ body {
   position: relative;
 }
 
+/* NAVBAR --------- */
+#navbar {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#navbar a {
+  color: #374151;
+  text-decoration: none;
+}
+
+#navbar a.active {
+  color: tomato;
+}
+
  /* TABLE --------- */
 .employee_table table {
   width: calc(100% - 2rem);
