@@ -30,6 +30,13 @@ export default function EmployeesPage() {
     <>
       <Navbar />
     <div className="employee_table">
+      <div className="employee_table_header">
+        <div>
+          <h1>Employees</h1>
+          <p>Manage your employees efficiently</p>
+        </div>
+          <Link to="/employees/new" className="btn">New Employee</Link>
+      </div>
       <table>
         <thead>
           <tr>

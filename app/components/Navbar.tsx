@@ -6,11 +6,11 @@ const Navbar = () => {
       <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
         Home
       </NavLink>
-      <NavLink to="/timesheets" className={({ isActive }) => isActive ? "active" : ""}>
-        Timesheets
-      </NavLink>
       <NavLink to="/employees" className={({ isActive }) => isActive ? "active" : ""}>
         Employees
+      </NavLink>
+      <NavLink to="/timesheets" className={({ isActive }) => isActive ? "active" : ""}>
+        Timesheets
       </NavLink>
     </div>
   )

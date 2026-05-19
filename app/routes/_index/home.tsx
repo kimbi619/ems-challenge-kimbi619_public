@@ -215,22 +215,22 @@ export default function HomePage() {
 
       <div className="home_actions">
         {canCheckIn && (
-          <button className="home_btn home_btn--checkin" onClick={handleCheckIn} disabled={loading}>
+          <button className="btn" onClick={handleCheckIn} disabled={loading}>
             {loading ? "..." : "Check In"}
           </button>
         )}
         {canBreak && (
-          <button className="home_btn home_btn--break" onClick={handleBreakStart} disabled={loading}>
+          <button className="btn" onClick={handleBreakStart} disabled={loading}>
             {loading ? "..." : "Start Break"}
           </button>
         )}
         {canResumeBreak && (
-          <button className="home_btn home_btn--resume" onClick={handleBreakEnd} disabled={loading}>
+          <button className="btn" onClick={handleBreakEnd} disabled={loading}>
             {loading ? "..." : "Resume Work"}
           </button>
         )}
         {canCheckOut && (
-          <button className="home_btn home_btn--checkout" onClick={handleCheckOut} disabled={loading}>
+          <button className="btn" onClick={handleCheckOut} disabled={loading}>
             {loading ? "..." : "Check Out"}
           </button>
         )}

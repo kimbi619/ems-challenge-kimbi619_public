@@ -88,6 +88,19 @@ body {
 }
 
  /* TABLE --------- */
+ .employee_table_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.employee_table_header h1 {
+  font-size: 1.5rem;
+  color: #374151;
+}
+.employee_table_header a {
+  text-decoration: none;
+}
 .employee_table table {
   width: calc(100% - 2rem);
   margin: 1rem;
